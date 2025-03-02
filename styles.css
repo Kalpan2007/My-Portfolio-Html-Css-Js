@@ -564,3 +564,72 @@ body {
     margin-top: 1rem;
 }
 
+/* Video Section Styles */
+.video-section {
+    padding: 6rem 0;
+    background-color: var(--bg-color); /* Matches about and skills section background */
+    text-align: center;
+}
+
+.video-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color); /* Matches about section heading color */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-out; /* Matches existing animation */
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Max width for larger screens */
+    margin: 0 auto;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px; /* Matches project-card and other elements */
+    background: rgba(255, 255, 255, 0.05); /* Matches about-text and skill-category background */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Matches about-text shadow */
+    transition: var(--transition); /* Matches existing transitions */
+}
+
+.video-wrapper:hover {
+    transform: translateY(-5px); /* Matches hover effect from about-text and skill-category */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Matches hover shadow */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .video-section {
+        padding: 4rem 0; /* Matches skills section responsive padding */
+    }
+
+    .video-section h2 {
+        font-size: 2rem; /* Slightly smaller for tablets */
+    }
+
+    .video-wrapper {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-section {
+        padding: 3rem 0; /* Further reduced for mobile */
+    }
+
+    .video-section h2 {
+        font-size: 1.5rem; /* Matches other mobile adjustments */
+    }
+}

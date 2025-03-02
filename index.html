@@ -147,6 +147,42 @@
                 </div>
             </div>
         </section>
+        <section id="figma-projects" class="projects">
+            <div class="container">
+                <h2 data-aos="fade-right">Figma UI/UX Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-content">
+                            <h3>E-Commerce Website UI/UX Design</h3>
+                            <p>A modern and responsive eCommerce website UI/UX design created in Figma, optimized for a seamless shopping experience.</p>
+                            <div class="project-links">
+                                <a href="https://www.figma.com/design/6I6QMcQJmxf7uNJmY8TBlJ/EcoomerceFor-Practies?node-id=0-1&t=x6vGrNFKKtzA88gP-1" class="btn figma-btn" style="color: white; background-color: #ff5722;" target="_blank"><i class="fas fa-paint-brush"></i> Figma Design</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-content">
+                            <h3>Fruit Shopping Mobile App - UI/UX Design</h3>
+                            <p>A clean and modern mobile app UI designed for an effortless fruit shopping experience.</p>
+                            <div class="project-links">
+                                <a href="https://www.figma.com/design/SJ0Ki4luOi3ix6h17krbs0/Fruits-Mobile-App?node-id=0-1&t=3aaLluGFzs0jjJWE-1" class="btn figma-btn" style="color: white; background-color: #ff5722;" target="_blank"><i class="fas fa-paint-brush"></i> Figma Design</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-content">
+                            <h3>Instagram Clone - UI/UX Design</h3>
+                            <p>An interactive Instagram Clone UI designed to replicate the platform’s core features with real-time user flows.</p>
+                            <div class="project-links">
+                                <a href="https://www.figma.com/proto/sY3Zxf1IHMmCclGKiuTA3w/INSTAGRAM-CLONE?node-id=0-1&t=SObOqxdGvh7GRgOy-1" class="btn figma-btn" style="color: white; background-color: #ff5722;" target="_blank"><i class="fas fa-paint-brush"></i> Figma Design</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
 
         <section id="projects" class="projects">
             <div class="container">
@@ -298,6 +334,47 @@
                 </div>
             </div>
         </section>
+
+        <section id="video-showcase" class="video-section">
+            <div class="container">
+                <h2 data-aos="fade-up">Project Showcase Video</h2>
+                <div class="video-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <iframe 
+                        id="showcase-video"
+                        width="100%" 
+                        height="100%"
+                        src="https://www.youtube.com/embed/q2cRGliiPNk?autoplay=0&mute=1&loop=1&playlist=q2cRGliiPNk&vq=hd1080" 
+                        title="Project Showcase" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const video = document.getElementById('showcase-video');
+                const videoSection = document.getElementById('video-showcase');
+        
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Play the video at 1080p by changing autoplay to 1
+                            video.src = video.src.replace('autoplay=0', 'autoplay=1');
+                        } else {
+                            // Pause the video by changing autoplay back to 0
+                            video.src = video.src.replace('autoplay=1', 'autoplay=0');
+                        }
+                    });
+                }, {
+                    threshold: 0.5 // Trigger when 50% of the section is visible
+                });
+        
+                observer.observe(videoSection);
+            });
+        </script>
+
         
 
         <section id="contact" class="contact">
