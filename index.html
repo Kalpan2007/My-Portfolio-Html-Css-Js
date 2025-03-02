@@ -147,6 +147,54 @@
                 </div>
             </div>
         </section>
+
+
+        <section id="video-showcase" class="video-section">
+            <div class="container">
+                <h2 data-aos="fade-up">Project Showcase Video</h2>
+                <div class="video-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <iframe 
+                        id="showcase-video"
+                        width="100%" 
+                        height="100%"
+                        src="https://www.youtube.com/embed/q2cRGliiPNk?autoplay=0&mute=1&loop=1&playlist=q2cRGliiPNk&vq=hd1080" 
+                        title="Project Showcase" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const video = document.getElementById('showcase-video');
+                const videoSection = document.getElementById('video-showcase');
+        
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Play the video at 1080p by changing autoplay to 1
+                            video.src = video.src.replace('autoplay=0', 'autoplay=1');
+                        } else {
+                            // Pause the video by changing autoplay back to 0
+                            video.src = video.src.replace('autoplay=1', 'autoplay=0');
+                        }
+                    });
+                }, {
+                    threshold: 0.5 // Trigger when 50% of the section is visible
+                });
+        
+                observer.observe(videoSection);
+            });
+        </script>
+
+
+
+
+
+
+
         <section id="figma-projects" class="projects">
             <div class="container">
                 <h2 data-aos="fade-right">Figma UI/UX Projects</h2>
@@ -335,45 +383,7 @@
             </div>
         </section>
 
-        <section id="video-showcase" class="video-section">
-            <div class="container">
-                <h2 data-aos="fade-up">Project Showcase Video</h2>
-                <div class="video-wrapper" data-aos="fade-up" data-aos-delay="100">
-                    <iframe 
-                        id="showcase-video"
-                        width="100%" 
-                        height="100%"
-                        src="https://www.youtube.com/embed/q2cRGliiPNk?autoplay=0&mute=1&loop=1&playlist=q2cRGliiPNk&vq=hd1080" 
-                        title="Project Showcase" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </section>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const video = document.getElementById('showcase-video');
-                const videoSection = document.getElementById('video-showcase');
         
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            // Play the video at 1080p by changing autoplay to 1
-                            video.src = video.src.replace('autoplay=0', 'autoplay=1');
-                        } else {
-                            // Pause the video by changing autoplay back to 0
-                            video.src = video.src.replace('autoplay=1', 'autoplay=0');
-                        }
-                    });
-                }, {
-                    threshold: 0.5 // Trigger when 50% of the section is visible
-                });
-        
-                observer.observe(videoSection);
-            });
-        </script>
 
         
 
